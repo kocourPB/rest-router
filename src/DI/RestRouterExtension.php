@@ -17,7 +17,7 @@ use Packeto\RestRouter\AnnotationsResolver;
 use Packeto\RestRouter\Common\Annotations\ApiRoute;
 use Packeto\RestRouter\Common\Annotations\ApiRouteSpec;
 
-class ApiRouterExtension extends CompilerExtension
+class RestRouterExtension extends CompilerExtension
 {
 
 	/**
