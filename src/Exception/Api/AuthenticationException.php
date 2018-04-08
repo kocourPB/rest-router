@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Packeto\RestRouter\Exception;
+namespace Packeto\RestRouter\Exception\Api;
 
 use Nette\Http\IResponse;
 use Packeto\RestRouter\Exception\Api\ApiException;

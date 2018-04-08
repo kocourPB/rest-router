@@ -8,7 +8,7 @@ use Nette\Http\IRequest;
 use Nette\SmartObject;
 use Nette\Utils\Json;
 use Nette\Utils\JsonException;
-use Packeto\RestRouter\Exception\SchemaValidatorException;
+use Packeto\RestRouter\Exception\Api\SchemaValidatorException;
 use Packeto\RestRouter\Security\IAuthenticator;
 use League\JsonGuard\ValidationError;
 use League\JsonGuard\Validator;
