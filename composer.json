@@ -1,11 +1,7 @@
 {
   "name": "packeto/rest-router",
-  "description": "REST router extension for Nette Framework with some annotation extensions.",
-  "license": [
-    "BSD-3-Clause",
-    "GPL-2.0",
-    "GPL-3.0"
-  ],
+  "description": "REST router extension for Nette Framework with simple annotation features.",
+  "license": ["MIT"],
   "authors": [
     {
       "name": "David Zadražil",
