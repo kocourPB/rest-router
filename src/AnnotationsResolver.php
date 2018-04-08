@@ -66,7 +66,7 @@ class AnnotationsResolver
 			return;
 		}
 
-		if ($this->request->getMethod() === 'POST') {
+		if (in_array($this->request->getMethod(), [IRequest::POST, IRequest::PATCH, IRequest::PUT])) {
 			try {
 				$schema = @file_get_contents($this->config['jsonSchemasPath'] . '/' . str_replace('"', '', $element));
 				if ($schema === false) {

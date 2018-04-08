@@ -6,6 +6,7 @@ namespace Packeto\RestRouter\Application\Responses;
 
 use Nette;
 use Packeto\RestRouter\Exception\Api\ApiException;
+use Tracy\Debugger;
 
 class ErrorResponse implements Nette\Application\IResponse
 {
