@@ -1,0 +1,31 @@
+{
+  "name": "packeto/rest-router",
+  "description": "REST router extension for Nette Framework with some annotation extensions.",
+  "license": [
+    "BSD-3-Clause",
+    "GPL-2.0",
+    "GPL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "David Zadražil",
+      "email": "me@davidzadrazil.cz"
+    }
+  ],
+  "require": {
+    "php": ">= 7.1.0",
+    "nette/http": "^2.3",
+    "nette/utils": "^2.3",
+    "nette/application": "^2.3",
+    "nette/di": "^2.3",
+    "nette/reflection": "^2.3",
+    "league/json-guard": "^1.0",
+    "doctrine/cache": "^1.7.1",
+    "doctrine/annotations": "~1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Packeto\\RestRouter\\": "src/"
+    }
+  }
+}
