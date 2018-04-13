@@ -17,6 +17,7 @@ use Packeto\RestRouter\Command\Exception\CommandDTONotFoundException;
 use Packeto\RestRouter\Command\ICommandDTO;
 use Packeto\RestRouter\Exception\Api\ApiException;
 use Packeto\RestRouter\Exception\Api\ClientErrorException;
+use Packeto\RestRouter\Security\IAuthenticator;
 use Shopee\ApiModule\Presenters\CreateUserDTO;
 use Throwable;
 use Tracy\Debugger;
@@ -85,6 +86,12 @@ abstract class ResourcePresenter extends Presenter
 
 			return $this->response;
 		}
+	}
+
+
+	public function getAuthenticator(): IAuthenticator
+	{
+		return $this->annotationsResolver->getAuthenticator();
 	}
 
 

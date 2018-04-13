@@ -54,6 +54,12 @@ class AnnotationsResolver
 	}
 
 
+	public function getAuthenticator(): IAuthenticator
+	{
+		return $this->authenticator;
+	}
+
+
 	private function authenticateRequest()
 	{
 		$this->authenticator->authenticate($this->request);
