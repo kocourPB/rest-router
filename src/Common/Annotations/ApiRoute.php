@@ -274,6 +274,24 @@ class ApiRoute extends ApiRouteSpec implements IRouter
 		$method = $this->resolveMethod($httpRequest);
 		$action = $this->actions[$method];
 
+		if ($method === 'OPTIONS') {
+			$request = new Request(
+				'Users:Api:Config',
+				$method,
+				[],
+				$httpRequest->getPost(),
+				$httpRequest->getFiles(),
+				[Request::SECURED => $httpRequest->isSecured()]
+			);
+
+			/**
+			 * Trigger event - route matches
+			 */
+			$this->onMatch($this, $request);
+
+			return $request;
+		}
+
 		if (!$action) {
 			return null;
 		}
