@@ -31,6 +31,16 @@ abstract class ResourcePresenter extends Presenter
 	private $request;
 
 	/**
+	 * @var callable[]
+	 */
+	public $onRequest = [];
+
+	/**
+	 * @var callable[]
+	 */
+	public $onResponse = [];
+
+	/**
 	 * @var array
 	 */
 	private $globalParams;
@@ -64,6 +74,7 @@ abstract class ResourcePresenter extends Presenter
 	{
 		$this->request = $request;
 
+		$this->onRequest($this, $this->getHttpRequest(), $request);
 		$this->setParent($this->getParent(), $request->getPresenterName());
 
 		$this->initGlobalParameters();
@@ -83,6 +94,8 @@ abstract class ResourcePresenter extends Presenter
 
 			$this->onShutdown($this, $this->response);
 			$this->shutdown($this->response);
+
+			$this->onResponse($this->response);
 
 			return $this->response;
 		}
@@ -170,6 +183,8 @@ abstract class ResourcePresenter extends Presenter
 	public function sendResponse(\Nette\Application\IResponse $response)
 	{
 		$this->response = $response;
+		$this->onResponse($this->response);
+		
 		parent::sendResponse($response);
 	}
 }
