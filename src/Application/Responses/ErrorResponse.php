@@ -39,7 +39,8 @@ class ErrorResponse implements Nette\Application\IResponse
 			$payload = [
 				'success' => false,
 				'error' => [
-					'message' => (string) $this->exception->getMessage(),
+					'message' => 'Oops. Server error occured and has been logged.',
+					'code' => 804
 				],
 			];
 		}
