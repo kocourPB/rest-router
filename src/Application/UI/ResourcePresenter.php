@@ -20,7 +20,6 @@ use Packeto\RestRouter\Exception\Api\ClientErrorException;
 use Packeto\RestRouter\Security\IAuthenticator;
 use Shopee\ApiModule\Presenters\CreateUserDTO;
 use Throwable;
-use Tracy\Debugger;
 
 abstract class ResourcePresenter extends Presenter
 {
@@ -39,6 +38,11 @@ abstract class ResourcePresenter extends Presenter
 	 * @var callable[]
 	 */
 	public $onResponse = [];
+
+	/**
+	 * @var callable[]
+	 */
+	public $onError = [];
 
 	/**
 	 * @var array
@@ -87,6 +91,7 @@ abstract class ResourcePresenter extends Presenter
 
 			if (!$e instanceof AbortException) {
 				try {
+					$this->onError($e);
 					$this->sendErrorResponse($e);
 				} catch (AbortException $e) {
 				}
@@ -184,7 +189,7 @@ abstract class ResourcePresenter extends Presenter
 	{
 		$this->response = $response;
 		$this->onResponse($this->response);
-		
+
 		parent::sendResponse($response);
 	}
 }
