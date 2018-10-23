@@ -1,11 +1,11 @@
 {
-  "name": "packeto/rest-router",
+  "name": "kocourPB/rest-router",
   "description": "REST router extension for Nette Framework with simple annotation features.",
   "license": ["MIT"],
   "authors": [
     {
-      "name": "David Zadražil",
-      "email": "me@davidzadrazil.cz"
+      "name": "Michal Lokšík",
+      "email": "mloksik@gmail.com"
     }
   ],
   "require": {
