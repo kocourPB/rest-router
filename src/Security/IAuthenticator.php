@@ -16,4 +16,13 @@ interface IAuthenticator
 	 * @throws AuthenticationException
 	 */
 	public function authenticate(IRequest $request): void;
+
+
+	/**
+	 * @param IRequest $request
+	 * @return void
+	 * @throws AuthenticationException
+	 */
+	public function appTokenCheck(IRequest $request): void;
+
 }

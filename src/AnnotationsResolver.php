@@ -51,6 +51,10 @@ class AnnotationsResolver
 		if ($element->hasAnnotation('Authenticated')) {
 			$this->authenticateRequest();
 		}
+
+		if ($element->hasAnnotation('AppToken')) {
+			$this->appTokenCheck();
+		}
 	}
 
 
@@ -63,6 +67,12 @@ class AnnotationsResolver
 	private function authenticateRequest()
 	{
 		$this->authenticator->authenticate($this->request);
+	}
+
+
+	private function appTokenCheck()
+	{
+		$this->authenticator->appTokenCheck($this->request);
 	}
 
 
