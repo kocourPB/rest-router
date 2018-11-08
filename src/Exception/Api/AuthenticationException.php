@@ -15,8 +15,8 @@ class AuthenticationException extends ApiException
 	public const BAD_AUTHENTICATION = 802;
 
 
-	public function __construct(string $message = '', int $errorCode, array $errors = [])
+	public function __construct(string $message = '', int $errorCode, array $errors = [], ?\Throwable $previousException = null)
 	{
-		parent::__construct($message, $errorCode, IResponse::S401_UNAUTHORIZED);
+		parent::__construct($message, $errorCode, IResponse::S401_UNAUTHORIZED, $previousException);
 	}
 }

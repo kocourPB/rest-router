@@ -22,9 +22,9 @@ class SchemaValidatorException extends ApiException
 	protected $errors = [];
 
 
-	public function __construct(string $message = '', int $errorCode, array $errors = [])
+	public function __construct(string $message = '', int $errorCode, array $errors = [], ?\Throwable $previousException = null)
 	{
-		parent::__construct($message, $errorCode, IResponse::S400_BAD_REQUEST);
+		parent::__construct($message, $errorCode, IResponse::S400_BAD_REQUEST, $previousException);
 		$this->errors = $errors;
 		$this->success = false;
 	}

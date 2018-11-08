@@ -20,9 +20,9 @@ class ApiException extends RuntimeException
 	protected $errorCode;
 
 
-	public function __construct(string $message = '', int $errorCode, int $httpCode = 400)
+	public function __construct(string $message = '', int $errorCode, int $httpCode = 400, ?\Throwable $previousException = null)
 	{
-		parent::__construct($message, $httpCode, null);
+		parent::__construct($message, $httpCode, $previousException);
 		$this->errorCode = $errorCode;
 	}
 
