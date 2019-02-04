@@ -25,4 +25,12 @@ interface IAuthenticator
 	 */
 	public function appTokenCheck(IRequest $request): void;
 
+
+	/**
+	 * @param IRequest $request
+	 * @return void
+	 * @throws AuthenticationException
+	 */
+	public function adminTokenCheck(IRequest $request): void;
+
 }

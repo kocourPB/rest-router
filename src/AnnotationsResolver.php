@@ -55,6 +55,10 @@ class AnnotationsResolver
 		if ($element->hasAnnotation('AppToken')) {
 			$this->appTokenCheck();
 		}
+
+		if ($element->hasAnnotation('AdminToken')) {
+			$this->adminTokenCheck();
+		}
 	}
 
 
@@ -73,6 +77,12 @@ class AnnotationsResolver
 	private function appTokenCheck()
 	{
 		$this->authenticator->appTokenCheck($this->request);
+	}
+
+
+	private function adminTokenCheck()
+	{
+		$this->authenticator->adminTokenCheck($this->request);
 	}
 
 
